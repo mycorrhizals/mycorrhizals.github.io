@@ -1,0 +1,22 @@
+<div class="swiper-wrapper clearfix">
+                <div class="swiper-slide active" data-val="0">
+ 
+    <div class="tt-mslide background-block" style="background-image:url(img/slider/bg.jpg);">
+      <div class="container">
+         {% for slide in site.data.slides %}
+                            <div class="tt-mslide-inner">
+                               <h1 class="c-h1">{{slide.maintitle}}</h1>
+                               <div class="simple-text size-2">
+                                    <p>{{slide.smalltext}}</p>
+                                    <a class="c-btn type-1" href="{{slide.link}}">{{slide.buttontext}}</a>
+                                 <div class="empty-space marg-lg-b40 marg-sm-b30"></div>
+                                </div>
+                              </div>
+  {% endfor %}
+</div>
+</div>
+</div>
+</div>
+
+
+                

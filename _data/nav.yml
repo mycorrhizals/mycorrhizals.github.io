@@ -1,0 +1,33 @@
+- name: Home
+  path: index.html
+  section_id: Home
+- name: About us
+  path: about-us.html
+  section_id: About Us
+  children:
+- name: Our Clients
+  path: clients.html
+  section_id: Our Clients
+- name: Where we work
+  path: where-we-work.html
+  section_id: Where we work
+- name: What we do
+  path: what-we-do.html
+  section_id: What we do
+  children:
+    - name: Qualitative
+      path: what-we-do/qualitative.html
+    - name: Quantitative
+      path: what-we-do/quantitative.html
+    - name: Sensory Research
+      path: what-we-do/sensory-research.html
+    - name: Social Research
+      path: what-we-do/social-research.html
+- name: Proprietary Tools
+  path: proprietary-tools.html
+  section_id: Proprietary Tools
+  children:
+    - name: Vibrand Reach
+      path: proprietary-tools/vibrand-reach.html
+    - name: Vibrand Opinion
+      path: proprietary-tools/vibrand-opinion.html  

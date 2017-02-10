@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no, minimal-ui"/>
+
+    <!-- FONTS -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css"  rel="stylesheet" >
+    <link href='https://fonts.googleapis.com/css?family=Poppins:300,400,700' rel='stylesheet' type='text/css'>
+
+    <!-- CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" rel="stylesheet">
+    <link href="{{site.url}}/css/idangerous.swiper.css" rel="stylesheet" type="text/css" />
+    <link href="{{site.url}}/css/style.css" rel="stylesheet" type="text/css" />
+<!-- CSS Carousel -->
+<link href="{{site.url}}/css/owl.carousel.css" rel="stylesheet" type="text/css" />
+<link href="{{site.url}}/css/owl.theme.css" rel="stylesheet" type="text/css" />
+<link href="{{site.url}}/css/owl.transitions.css" rel="stylesheet" type="text/css" />
+
+    <link rel="shortcut icon" href="{{site.url}}/img/favicon.ico" />
+<title>
+     {% if page.title %}
+    {{ page.title }}
+  {% else %}
+    Default Page Title
+  {% endif %}
+</title>
+      <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+      {% if page.description %}
+  <meta name="description" content="{{ page.description}}" />
+{% endif %}
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84811065-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body class="theme-orange">
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=137946509955031";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- LOADER -->
+    <div id="loader-wrapper">
+        <div id="loader"><span class="loader-inner"></span></div>
+        <div id="loading-text">LOADING</div>
+    </div>   
+
+    <!-- HEADER -->
+    <header class="tt-header">
+        <div class="container">
+            <div class="top-inner clearfix">
+                <div class="top-inner-container">
+                    <a class="logo" href="{{site.url}}/index.html"><img src="{{site.url}}/img/header/logo_orange.png" height="120"  alt=""></a>
+                    <button class="cmn-toggle-switch"><span></span></button>
+                </div>
+            </div>
+            <div class="toggle-block">
+                <div class="toggle-block-container">
+                    <nav class="main-nav clearfix">
+                        <ul>
+                            {% for item in site.data.nav %}
+                {% if item.section_id == page.section_id %}
+                  {% assign active_class = "active" %}
+                {% else %}
+                  {% assign active_class = "" %}
+                {% endif %}
+
+                {% if item.children %}
+                            <li class="parent {{active_class}}">
+                                <a href="{{site.url}}/{{ item.path }}">{{item.name}}</a>  
+                                <ul>{% for child in item.children %}
+                                 <li>
+                          <a href="{{site.url}}/{{ child.path }}">{{ child.name }}</a>
+                        </li>
+{% endfor %}
+                    </ul>                          
+                            </li>
+                             {% else %}
+                            <li class="parent {{active_class}}">
+                                <a href="{{site.url}}/{{ item.path }}">{{ item.name }}</a></li>
+                {% endif %}
+              {% endfor %}
+                        </ul>
+                    </nav>
+                    <div class="nav-more">
+                        <a class="c-btn type-2" href="{{site.url}}/contact-us.html"><span>Contact Us</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{{content}}
+   <!-- FOOTER -->
+    <footer class="tt-footer">
+         <img style="max-height: 165px;" src="{{site.url}}/img/footer/footer_image.jpg"/ width="100%">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-6">
+                    <div class="empty-space marg-lg-b25"></div>
+                    <div class="simple-text size-3 color-4">
+                        <p>Vibrand Research is a market research agency full of fresh ideas and loads of experience. While our success was built on our research craft, good looks, and the proper use of apostrophes, experience is what defines us.</p>
+                    </div>
+                    <div class="empty-space marg-xs-b30"></div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="empty-space marg-lg-b25"></div>
+<h5 class="c-h5 color-3">Contact Us</h5>
+ <div class="empty-space marg-lg-b10"></div>
+                    <div class="tt-address clearfix">
+                        <div class="tt-address-icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+                        <div class="tt-address-info">
+                            <a href="mailto:info@vibrand.co.za">info@vibrand.co.za</a>
+                        </div>
+                    </div>
+                    <div class="empty-space marg-lg-b25"></div>
+                    
+                   
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <div class="empty-space marg-lg-b25"></div>
+                    <h5 class="c-h5 color-3">Follow Us</h5>
+                     <div class="empty-space marg-lg-b10"></div>
+                    <ul class="tt-social clearfix">
+                       <li><a href="https://www.facebook.com/vibrandresearch/?fref=ts"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    </ul>
+                    <div class="empty-space marg-lg-b10"></div>           
+                </div>
+        </div>
+        <div class="tt-footer-copy">
+            <div class="container">
+                <div class="simple-text size-5 color-4">
+                    <p>© Vibrand | All rights reserved. Built by Baobrand™</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="{{site.url}}/js/foundation.min.js"></script>
+    <script src="{{site.url}}/js/idangerous.swiper.min.js"></script>
+    <script src="{{site.url}}/js/global.js"></script>
+    <script src="{{site.url}}/js/owl.carousel.js"></script>
+    <script src="{{site.url}}/js/owl.carousel.min.js"></script>
+    <script src="{{site.url}}/js/owl.custom.js"></script>
+</body>
+</html>
